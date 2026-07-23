@@ -1,13 +1,88 @@
 <?php
 
 // This file is auto-generated, don't edit it. Thanks.
-
 namespace AntChain\REALPERSON\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class QueryCutpaymentsubRevenueRequest extends Model
-{
+class QueryCutpaymentsubRevenueRequest extends Model {
+    protected $_name = [
+        'authToken' => 'auth_token',
+        'productInstanceId' => 'product_instance_id',
+        'outerOrderNo' => 'outer_order_no',
+        'orderNo' => 'order_no',
+        'orderType' => 'order_type',
+        'firstLevelMemberid' => 'first_level_memberid',
+        'firstLevelTerminalid' => 'first_level_terminalid',
+        'externParam' => 'extern_param',
+    ];
+    public function validate() {
+        Model::validateRequired('outerOrderNo', $this->outerOrderNo, true);
+        Model::validateRequired('orderNo', $this->orderNo, true);
+        Model::validateRequired('orderType', $this->orderType, true);
+        Model::validateRequired('firstLevelMemberid', $this->firstLevelMemberid, true);
+        Model::validateRequired('firstLevelTerminalid', $this->firstLevelTerminalid, true);
+    }
+    public function toMap() {
+        $res = [];
+        if (null !== $this->authToken) {
+            $res['auth_token'] = $this->authToken;
+        }
+        if (null !== $this->productInstanceId) {
+            $res['product_instance_id'] = $this->productInstanceId;
+        }
+        if (null !== $this->outerOrderNo) {
+            $res['outer_order_no'] = $this->outerOrderNo;
+        }
+        if (null !== $this->orderNo) {
+            $res['order_no'] = $this->orderNo;
+        }
+        if (null !== $this->orderType) {
+            $res['order_type'] = $this->orderType;
+        }
+        if (null !== $this->firstLevelMemberid) {
+            $res['first_level_memberid'] = $this->firstLevelMemberid;
+        }
+        if (null !== $this->firstLevelTerminalid) {
+            $res['first_level_terminalid'] = $this->firstLevelTerminalid;
+        }
+        if (null !== $this->externParam) {
+            $res['extern_param'] = $this->externParam;
+        }
+        return $res;
+    }
+    /**
+     * @param array $map
+     * @return QueryCutpaymentsubRevenueRequest
+     */
+    public static function fromMap($map = []) {
+        $model = new self();
+        if(isset($map['auth_token'])){
+            $model->authToken = $map['auth_token'];
+        }
+        if(isset($map['product_instance_id'])){
+            $model->productInstanceId = $map['product_instance_id'];
+        }
+        if(isset($map['outer_order_no'])){
+            $model->outerOrderNo = $map['outer_order_no'];
+        }
+        if(isset($map['order_no'])){
+            $model->orderNo = $map['order_no'];
+        }
+        if(isset($map['order_type'])){
+            $model->orderType = $map['order_type'];
+        }
+        if(isset($map['first_level_memberid'])){
+            $model->firstLevelMemberid = $map['first_level_memberid'];
+        }
+        if(isset($map['first_level_terminalid'])){
+            $model->firstLevelTerminalid = $map['first_level_terminalid'];
+        }
+        if(isset($map['extern_param'])){
+            $model->externParam = $map['extern_param'];
+        }
+        return $model;
+    }
     // OAuth模式下的授权token
     /**
      * @var string
@@ -54,90 +129,5 @@ class QueryCutpaymentsubRevenueRequest extends Model
      * @var string
      */
     public $externParam;
-    protected $_name = [
-        'authToken'            => 'auth_token',
-        'productInstanceId'    => 'product_instance_id',
-        'outerOrderNo'         => 'outer_order_no',
-        'orderNo'              => 'order_no',
-        'orderType'            => 'order_type',
-        'firstLevelMemberid'   => 'first_level_memberid',
-        'firstLevelTerminalid' => 'first_level_terminalid',
-        'externParam'          => 'extern_param',
-    ];
 
-    public function validate()
-    {
-        Model::validateRequired('outerOrderNo', $this->outerOrderNo, true);
-        Model::validateRequired('orderNo', $this->orderNo, true);
-        Model::validateRequired('orderType', $this->orderType, true);
-        Model::validateRequired('firstLevelMemberid', $this->firstLevelMemberid, true);
-        Model::validateRequired('firstLevelTerminalid', $this->firstLevelTerminalid, true);
-    }
-
-    public function toMap()
-    {
-        $res = [];
-        if (null !== $this->authToken) {
-            $res['auth_token'] = $this->authToken;
-        }
-        if (null !== $this->productInstanceId) {
-            $res['product_instance_id'] = $this->productInstanceId;
-        }
-        if (null !== $this->outerOrderNo) {
-            $res['outer_order_no'] = $this->outerOrderNo;
-        }
-        if (null !== $this->orderNo) {
-            $res['order_no'] = $this->orderNo;
-        }
-        if (null !== $this->orderType) {
-            $res['order_type'] = $this->orderType;
-        }
-        if (null !== $this->firstLevelMemberid) {
-            $res['first_level_memberid'] = $this->firstLevelMemberid;
-        }
-        if (null !== $this->firstLevelTerminalid) {
-            $res['first_level_terminalid'] = $this->firstLevelTerminalid;
-        }
-        if (null !== $this->externParam) {
-            $res['extern_param'] = $this->externParam;
-        }
-
-        return $res;
-    }
-
-    /**
-     * @param array $map
-     *
-     * @return QueryCutpaymentsubRevenueRequest
-     */
-    public static function fromMap($map = [])
-    {
-        $model = new self();
-        if (isset($map['auth_token'])) {
-            $model->authToken = $map['auth_token'];
-        }
-        if (isset($map['product_instance_id'])) {
-            $model->productInstanceId = $map['product_instance_id'];
-        }
-        if (isset($map['outer_order_no'])) {
-            $model->outerOrderNo = $map['outer_order_no'];
-        }
-        if (isset($map['order_no'])) {
-            $model->orderNo = $map['order_no'];
-        }
-        if (isset($map['order_type'])) {
-            $model->orderType = $map['order_type'];
-        }
-        if (isset($map['first_level_memberid'])) {
-            $model->firstLevelMemberid = $map['first_level_memberid'];
-        }
-        if (isset($map['first_level_terminalid'])) {
-            $model->firstLevelTerminalid = $map['first_level_terminalid'];
-        }
-        if (isset($map['extern_param'])) {
-            $model->externParam = $map['extern_param'];
-        }
-
-        return $model;
-    }
 }

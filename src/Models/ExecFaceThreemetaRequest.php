@@ -1,13 +1,81 @@
 <?php
 
 // This file is auto-generated, don't edit it. Thanks.
-
 namespace AntChain\REALPERSON\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class ExecFaceThreemetaRequest extends Model
-{
+class ExecFaceThreemetaRequest extends Model {
+    protected $_name = [
+        'authToken' => 'auth_token',
+        'productInstanceId' => 'product_instance_id',
+        'certName' => 'cert_name',
+        'certNo' => 'cert_no',
+        'outerOrderNo' => 'outer_order_no',
+        'fileType' => 'file_type',
+        'facialPictureAuth' => 'facial_picture_auth',
+    ];
+    public function validate() {
+        Model::validateRequired('certName', $this->certName, true);
+        Model::validateRequired('certNo', $this->certNo, true);
+        Model::validateRequired('outerOrderNo', $this->outerOrderNo, true);
+        Model::validateRequired('fileType', $this->fileType, true);
+        Model::validateRequired('facialPictureAuth', $this->facialPictureAuth, true);
+    }
+    public function toMap() {
+        $res = [];
+        if (null !== $this->authToken) {
+            $res['auth_token'] = $this->authToken;
+        }
+        if (null !== $this->productInstanceId) {
+            $res['product_instance_id'] = $this->productInstanceId;
+        }
+        if (null !== $this->certName) {
+            $res['cert_name'] = $this->certName;
+        }
+        if (null !== $this->certNo) {
+            $res['cert_no'] = $this->certNo;
+        }
+        if (null !== $this->outerOrderNo) {
+            $res['outer_order_no'] = $this->outerOrderNo;
+        }
+        if (null !== $this->fileType) {
+            $res['file_type'] = $this->fileType;
+        }
+        if (null !== $this->facialPictureAuth) {
+            $res['facial_picture_auth'] = $this->facialPictureAuth;
+        }
+        return $res;
+    }
+    /**
+     * @param array $map
+     * @return ExecFaceThreemetaRequest
+     */
+    public static function fromMap($map = []) {
+        $model = new self();
+        if(isset($map['auth_token'])){
+            $model->authToken = $map['auth_token'];
+        }
+        if(isset($map['product_instance_id'])){
+            $model->productInstanceId = $map['product_instance_id'];
+        }
+        if(isset($map['cert_name'])){
+            $model->certName = $map['cert_name'];
+        }
+        if(isset($map['cert_no'])){
+            $model->certNo = $map['cert_no'];
+        }
+        if(isset($map['outer_order_no'])){
+            $model->outerOrderNo = $map['outer_order_no'];
+        }
+        if(isset($map['file_type'])){
+            $model->fileType = $map['file_type'];
+        }
+        if(isset($map['facial_picture_auth'])){
+            $model->facialPictureAuth = $map['facial_picture_auth'];
+        }
+        return $model;
+    }
     // OAuth模式下的授权token
     /**
      * @var string
@@ -49,83 +117,5 @@ class ExecFaceThreemetaRequest extends Model
      * @var string
      */
     public $facialPictureAuth;
-    protected $_name = [
-        'authToken'         => 'auth_token',
-        'productInstanceId' => 'product_instance_id',
-        'certName'          => 'cert_name',
-        'certNo'            => 'cert_no',
-        'outerOrderNo'      => 'outer_order_no',
-        'fileType'          => 'file_type',
-        'facialPictureAuth' => 'facial_picture_auth',
-    ];
 
-    public function validate()
-    {
-        Model::validateRequired('certName', $this->certName, true);
-        Model::validateRequired('certNo', $this->certNo, true);
-        Model::validateRequired('outerOrderNo', $this->outerOrderNo, true);
-        Model::validateRequired('fileType', $this->fileType, true);
-        Model::validateRequired('facialPictureAuth', $this->facialPictureAuth, true);
-    }
-
-    public function toMap()
-    {
-        $res = [];
-        if (null !== $this->authToken) {
-            $res['auth_token'] = $this->authToken;
-        }
-        if (null !== $this->productInstanceId) {
-            $res['product_instance_id'] = $this->productInstanceId;
-        }
-        if (null !== $this->certName) {
-            $res['cert_name'] = $this->certName;
-        }
-        if (null !== $this->certNo) {
-            $res['cert_no'] = $this->certNo;
-        }
-        if (null !== $this->outerOrderNo) {
-            $res['outer_order_no'] = $this->outerOrderNo;
-        }
-        if (null !== $this->fileType) {
-            $res['file_type'] = $this->fileType;
-        }
-        if (null !== $this->facialPictureAuth) {
-            $res['facial_picture_auth'] = $this->facialPictureAuth;
-        }
-
-        return $res;
-    }
-
-    /**
-     * @param array $map
-     *
-     * @return ExecFaceThreemetaRequest
-     */
-    public static function fromMap($map = [])
-    {
-        $model = new self();
-        if (isset($map['auth_token'])) {
-            $model->authToken = $map['auth_token'];
-        }
-        if (isset($map['product_instance_id'])) {
-            $model->productInstanceId = $map['product_instance_id'];
-        }
-        if (isset($map['cert_name'])) {
-            $model->certName = $map['cert_name'];
-        }
-        if (isset($map['cert_no'])) {
-            $model->certNo = $map['cert_no'];
-        }
-        if (isset($map['outer_order_no'])) {
-            $model->outerOrderNo = $map['outer_order_no'];
-        }
-        if (isset($map['file_type'])) {
-            $model->fileType = $map['file_type'];
-        }
-        if (isset($map['facial_picture_auth'])) {
-            $model->facialPictureAuth = $map['facial_picture_auth'];
-        }
-
-        return $model;
-    }
 }

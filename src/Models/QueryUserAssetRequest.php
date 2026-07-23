@@ -1,13 +1,71 @@
 <?php
 
 // This file is auto-generated, don't edit it. Thanks.
-
 namespace AntChain\REALPERSON\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class QueryUserAssetRequest extends Model
-{
+class QueryUserAssetRequest extends Model {
+    protected $_name = [
+        'authToken' => 'auth_token',
+        'productInstanceId' => 'product_instance_id',
+        'outerOrderNo' => 'outer_order_no',
+        'reqEncType' => 'req_enc_type',
+        'mobile' => 'mobile',
+        'externParam' => 'extern_param',
+    ];
+    public function validate() {
+        Model::validateRequired('outerOrderNo', $this->outerOrderNo, true);
+        Model::validateRequired('mobile', $this->mobile, true);
+    }
+    public function toMap() {
+        $res = [];
+        if (null !== $this->authToken) {
+            $res['auth_token'] = $this->authToken;
+        }
+        if (null !== $this->productInstanceId) {
+            $res['product_instance_id'] = $this->productInstanceId;
+        }
+        if (null !== $this->outerOrderNo) {
+            $res['outer_order_no'] = $this->outerOrderNo;
+        }
+        if (null !== $this->reqEncType) {
+            $res['req_enc_type'] = $this->reqEncType;
+        }
+        if (null !== $this->mobile) {
+            $res['mobile'] = $this->mobile;
+        }
+        if (null !== $this->externParam) {
+            $res['extern_param'] = $this->externParam;
+        }
+        return $res;
+    }
+    /**
+     * @param array $map
+     * @return QueryUserAssetRequest
+     */
+    public static function fromMap($map = []) {
+        $model = new self();
+        if(isset($map['auth_token'])){
+            $model->authToken = $map['auth_token'];
+        }
+        if(isset($map['product_instance_id'])){
+            $model->productInstanceId = $map['product_instance_id'];
+        }
+        if(isset($map['outer_order_no'])){
+            $model->outerOrderNo = $map['outer_order_no'];
+        }
+        if(isset($map['req_enc_type'])){
+            $model->reqEncType = $map['req_enc_type'];
+        }
+        if(isset($map['mobile'])){
+            $model->mobile = $map['mobile'];
+        }
+        if(isset($map['extern_param'])){
+            $model->externParam = $map['extern_param'];
+        }
+        return $model;
+    }
     // OAuth模式下的授权token
     /**
      * @var string
@@ -44,73 +102,5 @@ class QueryUserAssetRequest extends Model
      * @var string
      */
     public $externParam;
-    protected $_name = [
-        'authToken'         => 'auth_token',
-        'productInstanceId' => 'product_instance_id',
-        'outerOrderNo'      => 'outer_order_no',
-        'reqEncType'        => 'req_enc_type',
-        'mobile'            => 'mobile',
-        'externParam'       => 'extern_param',
-    ];
 
-    public function validate()
-    {
-        Model::validateRequired('outerOrderNo', $this->outerOrderNo, true);
-        Model::validateRequired('mobile', $this->mobile, true);
-    }
-
-    public function toMap()
-    {
-        $res = [];
-        if (null !== $this->authToken) {
-            $res['auth_token'] = $this->authToken;
-        }
-        if (null !== $this->productInstanceId) {
-            $res['product_instance_id'] = $this->productInstanceId;
-        }
-        if (null !== $this->outerOrderNo) {
-            $res['outer_order_no'] = $this->outerOrderNo;
-        }
-        if (null !== $this->reqEncType) {
-            $res['req_enc_type'] = $this->reqEncType;
-        }
-        if (null !== $this->mobile) {
-            $res['mobile'] = $this->mobile;
-        }
-        if (null !== $this->externParam) {
-            $res['extern_param'] = $this->externParam;
-        }
-
-        return $res;
-    }
-
-    /**
-     * @param array $map
-     *
-     * @return QueryUserAssetRequest
-     */
-    public static function fromMap($map = [])
-    {
-        $model = new self();
-        if (isset($map['auth_token'])) {
-            $model->authToken = $map['auth_token'];
-        }
-        if (isset($map['product_instance_id'])) {
-            $model->productInstanceId = $map['product_instance_id'];
-        }
-        if (isset($map['outer_order_no'])) {
-            $model->outerOrderNo = $map['outer_order_no'];
-        }
-        if (isset($map['req_enc_type'])) {
-            $model->reqEncType = $map['req_enc_type'];
-        }
-        if (isset($map['mobile'])) {
-            $model->mobile = $map['mobile'];
-        }
-        if (isset($map['extern_param'])) {
-            $model->externParam = $map['extern_param'];
-        }
-
-        return $model;
-    }
 }

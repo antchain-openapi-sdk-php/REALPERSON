@@ -1,13 +1,109 @@
 <?php
 
 // This file is auto-generated, don't edit it. Thanks.
-
 namespace AntChain\REALPERSON\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class InitCarrierRepairmobileRequest extends Model
-{
+class InitCarrierRepairmobileRequest extends Model {
+    protected $_name = [
+        'authToken' => 'auth_token',
+        'productInstanceId' => 'product_instance_id',
+        'outerOrderNo' => 'outer_order_no',
+        'processId' => 'process_id',
+        'carrier' => 'carrier',
+        'encryptType' => 'encrypt_type',
+        'certNo' => 'cert_no',
+        'name' => 'name',
+        'mobile' => 'mobile',
+        'scene' => 'scene',
+        'externParam' => 'extern_param',
+    ];
+    public function validate() {
+        Model::validateRequired('outerOrderNo', $this->outerOrderNo, true);
+        Model::validateRequired('processId', $this->processId, true);
+        Model::validateRequired('carrier', $this->carrier, true);
+        Model::validateRequired('certNo', $this->certNo, true);
+        Model::validateRequired('name', $this->name, true);
+    }
+    public function toMap() {
+        $res = [];
+        if (null !== $this->authToken) {
+            $res['auth_token'] = $this->authToken;
+        }
+        if (null !== $this->productInstanceId) {
+            $res['product_instance_id'] = $this->productInstanceId;
+        }
+        if (null !== $this->outerOrderNo) {
+            $res['outer_order_no'] = $this->outerOrderNo;
+        }
+        if (null !== $this->processId) {
+            $res['process_id'] = $this->processId;
+        }
+        if (null !== $this->carrier) {
+            $res['carrier'] = $this->carrier;
+        }
+        if (null !== $this->encryptType) {
+            $res['encrypt_type'] = $this->encryptType;
+        }
+        if (null !== $this->certNo) {
+            $res['cert_no'] = $this->certNo;
+        }
+        if (null !== $this->name) {
+            $res['name'] = $this->name;
+        }
+        if (null !== $this->mobile) {
+            $res['mobile'] = $this->mobile;
+        }
+        if (null !== $this->scene) {
+            $res['scene'] = $this->scene;
+        }
+        if (null !== $this->externParam) {
+            $res['extern_param'] = $this->externParam;
+        }
+        return $res;
+    }
+    /**
+     * @param array $map
+     * @return InitCarrierRepairmobileRequest
+     */
+    public static function fromMap($map = []) {
+        $model = new self();
+        if(isset($map['auth_token'])){
+            $model->authToken = $map['auth_token'];
+        }
+        if(isset($map['product_instance_id'])){
+            $model->productInstanceId = $map['product_instance_id'];
+        }
+        if(isset($map['outer_order_no'])){
+            $model->outerOrderNo = $map['outer_order_no'];
+        }
+        if(isset($map['process_id'])){
+            $model->processId = $map['process_id'];
+        }
+        if(isset($map['carrier'])){
+            $model->carrier = $map['carrier'];
+        }
+        if(isset($map['encrypt_type'])){
+            $model->encryptType = $map['encrypt_type'];
+        }
+        if(isset($map['cert_no'])){
+            $model->certNo = $map['cert_no'];
+        }
+        if(isset($map['name'])){
+            $model->name = $map['name'];
+        }
+        if(isset($map['mobile'])){
+            $model->mobile = $map['mobile'];
+        }
+        if(isset($map['scene'])){
+            $model->scene = $map['scene'];
+        }
+        if(isset($map['extern_param'])){
+            $model->externParam = $map['extern_param'];
+        }
+        return $model;
+    }
     // OAuth模式下的授权token
     /**
      * @var string
@@ -78,111 +174,5 @@ class InitCarrierRepairmobileRequest extends Model
      * @var string
      */
     public $externParam;
-    protected $_name = [
-        'authToken'         => 'auth_token',
-        'productInstanceId' => 'product_instance_id',
-        'outerOrderNo'      => 'outer_order_no',
-        'processId'         => 'process_id',
-        'carrier'           => 'carrier',
-        'encryptType'       => 'encrypt_type',
-        'certNo'            => 'cert_no',
-        'name'              => 'name',
-        'mobile'            => 'mobile',
-        'scene'             => 'scene',
-        'externParam'       => 'extern_param',
-    ];
 
-    public function validate()
-    {
-        Model::validateRequired('outerOrderNo', $this->outerOrderNo, true);
-        Model::validateRequired('processId', $this->processId, true);
-        Model::validateRequired('carrier', $this->carrier, true);
-        Model::validateRequired('certNo', $this->certNo, true);
-        Model::validateRequired('name', $this->name, true);
-    }
-
-    public function toMap()
-    {
-        $res = [];
-        if (null !== $this->authToken) {
-            $res['auth_token'] = $this->authToken;
-        }
-        if (null !== $this->productInstanceId) {
-            $res['product_instance_id'] = $this->productInstanceId;
-        }
-        if (null !== $this->outerOrderNo) {
-            $res['outer_order_no'] = $this->outerOrderNo;
-        }
-        if (null !== $this->processId) {
-            $res['process_id'] = $this->processId;
-        }
-        if (null !== $this->carrier) {
-            $res['carrier'] = $this->carrier;
-        }
-        if (null !== $this->encryptType) {
-            $res['encrypt_type'] = $this->encryptType;
-        }
-        if (null !== $this->certNo) {
-            $res['cert_no'] = $this->certNo;
-        }
-        if (null !== $this->name) {
-            $res['name'] = $this->name;
-        }
-        if (null !== $this->mobile) {
-            $res['mobile'] = $this->mobile;
-        }
-        if (null !== $this->scene) {
-            $res['scene'] = $this->scene;
-        }
-        if (null !== $this->externParam) {
-            $res['extern_param'] = $this->externParam;
-        }
-
-        return $res;
-    }
-
-    /**
-     * @param array $map
-     *
-     * @return InitCarrierRepairmobileRequest
-     */
-    public static function fromMap($map = [])
-    {
-        $model = new self();
-        if (isset($map['auth_token'])) {
-            $model->authToken = $map['auth_token'];
-        }
-        if (isset($map['product_instance_id'])) {
-            $model->productInstanceId = $map['product_instance_id'];
-        }
-        if (isset($map['outer_order_no'])) {
-            $model->outerOrderNo = $map['outer_order_no'];
-        }
-        if (isset($map['process_id'])) {
-            $model->processId = $map['process_id'];
-        }
-        if (isset($map['carrier'])) {
-            $model->carrier = $map['carrier'];
-        }
-        if (isset($map['encrypt_type'])) {
-            $model->encryptType = $map['encrypt_type'];
-        }
-        if (isset($map['cert_no'])) {
-            $model->certNo = $map['cert_no'];
-        }
-        if (isset($map['name'])) {
-            $model->name = $map['name'];
-        }
-        if (isset($map['mobile'])) {
-            $model->mobile = $map['mobile'];
-        }
-        if (isset($map['scene'])) {
-            $model->scene = $map['scene'];
-        }
-        if (isset($map['extern_param'])) {
-            $model->externParam = $map['extern_param'];
-        }
-
-        return $model;
-    }
 }

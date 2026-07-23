@@ -1,13 +1,63 @@
 <?php
 
 // This file is auto-generated, don't edit it. Thanks.
-
 namespace AntChain\REALPERSON\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class QueryCarinfoDetailResponse extends Model
-{
+use AntChain\REALPERSON\Models\CarInfoDetail;
+
+class QueryCarinfoDetailResponse extends Model {
+    protected $_name = [
+        'reqMsgId' => 'req_msg_id',
+        'resultCode' => 'result_code',
+        'resultMsg' => 'result_msg',
+        'externInfo' => 'extern_info',
+        'carInfo' => 'car_info',
+    ];
+    public function validate() {}
+    public function toMap() {
+        $res = [];
+        if (null !== $this->reqMsgId) {
+            $res['req_msg_id'] = $this->reqMsgId;
+        }
+        if (null !== $this->resultCode) {
+            $res['result_code'] = $this->resultCode;
+        }
+        if (null !== $this->resultMsg) {
+            $res['result_msg'] = $this->resultMsg;
+        }
+        if (null !== $this->externInfo) {
+            $res['extern_info'] = $this->externInfo;
+        }
+        if (null !== $this->carInfo) {
+            $res['car_info'] = null !== $this->carInfo ? $this->carInfo->toMap() : null;
+        }
+        return $res;
+    }
+    /**
+     * @param array $map
+     * @return QueryCarinfoDetailResponse
+     */
+    public static function fromMap($map = []) {
+        $model = new self();
+        if(isset($map['req_msg_id'])){
+            $model->reqMsgId = $map['req_msg_id'];
+        }
+        if(isset($map['result_code'])){
+            $model->resultCode = $map['result_code'];
+        }
+        if(isset($map['result_msg'])){
+            $model->resultMsg = $map['result_msg'];
+        }
+        if(isset($map['extern_info'])){
+            $model->externInfo = $map['extern_info'];
+        }
+        if(isset($map['car_info'])){
+            $model->carInfo = CarInfoDetail::fromMap($map['car_info']);
+        }
+        return $model;
+    }
     // 请求唯一ID，用于链路跟踪和问题排查
     /**
      * @var string
@@ -37,64 +87,5 @@ class QueryCarinfoDetailResponse extends Model
      * @var CarInfoDetail
      */
     public $carInfo;
-    protected $_name = [
-        'reqMsgId'   => 'req_msg_id',
-        'resultCode' => 'result_code',
-        'resultMsg'  => 'result_msg',
-        'externInfo' => 'extern_info',
-        'carInfo'    => 'car_info',
-    ];
 
-    public function validate()
-    {
-    }
-
-    public function toMap()
-    {
-        $res = [];
-        if (null !== $this->reqMsgId) {
-            $res['req_msg_id'] = $this->reqMsgId;
-        }
-        if (null !== $this->resultCode) {
-            $res['result_code'] = $this->resultCode;
-        }
-        if (null !== $this->resultMsg) {
-            $res['result_msg'] = $this->resultMsg;
-        }
-        if (null !== $this->externInfo) {
-            $res['extern_info'] = $this->externInfo;
-        }
-        if (null !== $this->carInfo) {
-            $res['car_info'] = null !== $this->carInfo ? $this->carInfo->toMap() : null;
-        }
-
-        return $res;
-    }
-
-    /**
-     * @param array $map
-     *
-     * @return QueryCarinfoDetailResponse
-     */
-    public static function fromMap($map = [])
-    {
-        $model = new self();
-        if (isset($map['req_msg_id'])) {
-            $model->reqMsgId = $map['req_msg_id'];
-        }
-        if (isset($map['result_code'])) {
-            $model->resultCode = $map['result_code'];
-        }
-        if (isset($map['result_msg'])) {
-            $model->resultMsg = $map['result_msg'];
-        }
-        if (isset($map['extern_info'])) {
-            $model->externInfo = $map['extern_info'];
-        }
-        if (isset($map['car_info'])) {
-            $model->carInfo = CarInfoDetail::fromMap($map['car_info']);
-        }
-
-        return $model;
-    }
 }

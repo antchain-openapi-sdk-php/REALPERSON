@@ -1,57 +1,19 @@
 <?php
 
 // This file is auto-generated, don't edit it. Thanks.
-
 namespace AntChain\REALPERSON\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class CarInfo extends Model
-{
-    // 是否高频使用，格式：YES/NO
-    /**
-     * @example YES
-     *
-     * @var string
-     */
-    public $highFrequency;
-
-    // 车辆价值区间，格式：1，2，3...
-    /**
-     * @example 1
-     *
-     * @var string
-     */
-    public $value;
-
-    // 车辆类型，格式：1，2，3
-    /**
-     * @example 1
-     *
-     * @var string
-     */
-    public $type;
-
-    // 登记时间
-    /**
-     * @example 1
-     *
-     * @var string
-     */
-    public $time;
+class CarInfo extends Model {
     protected $_name = [
         'highFrequency' => 'high_frequency',
-        'value'         => 'value',
-        'type'          => 'type',
-        'time'          => 'time',
+        'value' => 'value',
+        'type' => 'type',
+        'time' => 'time',
     ];
-
-    public function validate()
-    {
-    }
-
-    public function toMap()
-    {
+    public function validate() {}
+    public function toMap() {
         $res = [];
         if (null !== $this->highFrequency) {
             $res['high_frequency'] = $this->highFrequency;
@@ -65,31 +27,54 @@ class CarInfo extends Model
         if (null !== $this->time) {
             $res['time'] = $this->time;
         }
-
         return $res;
     }
-
     /**
      * @param array $map
-     *
      * @return CarInfo
      */
-    public static function fromMap($map = [])
-    {
+    public static function fromMap($map = []) {
         $model = new self();
-        if (isset($map['high_frequency'])) {
+        if(isset($map['high_frequency'])){
             $model->highFrequency = $map['high_frequency'];
         }
-        if (isset($map['value'])) {
+        if(isset($map['value'])){
             $model->value = $map['value'];
         }
-        if (isset($map['type'])) {
+        if(isset($map['type'])){
             $model->type = $map['type'];
         }
-        if (isset($map['time'])) {
+        if(isset($map['time'])){
             $model->time = $map['time'];
         }
-
         return $model;
     }
+    // 是否高频使用，格式：YES/NO
+    /**
+     * @example YES
+     * @var string
+     */
+    public $highFrequency;
+
+    // 车辆价值区间，格式：1，2，3...
+    /**
+     * @example 1
+     * @var string
+     */
+    public $value;
+
+    // 车辆类型，格式：1，2，3
+    /**
+     * @example 1
+     * @var string
+     */
+    public $type;
+
+    // 登记时间
+    /**
+     * @example 1
+     * @var string
+     */
+    public $time;
+
 }

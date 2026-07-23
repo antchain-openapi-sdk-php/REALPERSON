@@ -1,13 +1,86 @@
 <?php
 
 // This file is auto-generated, don't edit it. Thanks.
-
 namespace AntChain\REALPERSON\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class QuerySocialriskBriefRequest extends Model
-{
+class QuerySocialriskBriefRequest extends Model {
+    protected $_name = [
+        'authToken' => 'auth_token',
+        'productInstanceId' => 'product_instance_id',
+        'outerOrderNo' => 'outer_order_no',
+        'scene' => 'scene',
+        'encType' => 'enc_type',
+        'certName' => 'cert_name',
+        'certNo' => 'cert_no',
+        'externParam' => 'extern_param',
+    ];
+    public function validate() {
+        Model::validateRequired('outerOrderNo', $this->outerOrderNo, true);
+        Model::validateRequired('encType', $this->encType, true);
+        Model::validateRequired('certNo', $this->certNo, true);
+    }
+    public function toMap() {
+        $res = [];
+        if (null !== $this->authToken) {
+            $res['auth_token'] = $this->authToken;
+        }
+        if (null !== $this->productInstanceId) {
+            $res['product_instance_id'] = $this->productInstanceId;
+        }
+        if (null !== $this->outerOrderNo) {
+            $res['outer_order_no'] = $this->outerOrderNo;
+        }
+        if (null !== $this->scene) {
+            $res['scene'] = $this->scene;
+        }
+        if (null !== $this->encType) {
+            $res['enc_type'] = $this->encType;
+        }
+        if (null !== $this->certName) {
+            $res['cert_name'] = $this->certName;
+        }
+        if (null !== $this->certNo) {
+            $res['cert_no'] = $this->certNo;
+        }
+        if (null !== $this->externParam) {
+            $res['extern_param'] = $this->externParam;
+        }
+        return $res;
+    }
+    /**
+     * @param array $map
+     * @return QuerySocialriskBriefRequest
+     */
+    public static function fromMap($map = []) {
+        $model = new self();
+        if(isset($map['auth_token'])){
+            $model->authToken = $map['auth_token'];
+        }
+        if(isset($map['product_instance_id'])){
+            $model->productInstanceId = $map['product_instance_id'];
+        }
+        if(isset($map['outer_order_no'])){
+            $model->outerOrderNo = $map['outer_order_no'];
+        }
+        if(isset($map['scene'])){
+            $model->scene = $map['scene'];
+        }
+        if(isset($map['enc_type'])){
+            $model->encType = $map['enc_type'];
+        }
+        if(isset($map['cert_name'])){
+            $model->certName = $map['cert_name'];
+        }
+        if(isset($map['cert_no'])){
+            $model->certNo = $map['cert_no'];
+        }
+        if(isset($map['extern_param'])){
+            $model->externParam = $map['extern_param'];
+        }
+        return $model;
+    }
     // OAuth模式下的授权token
     /**
      * @var string
@@ -37,7 +110,7 @@ class QuerySocialriskBriefRequest extends Model
      */
     public $encType;
 
-    //
+    // 
     // 姓名（根据enc_type决定加密方式）
     /**
      * @var string
@@ -55,88 +128,5 @@ class QuerySocialriskBriefRequest extends Model
      * @var string
      */
     public $externParam;
-    protected $_name = [
-        'authToken'         => 'auth_token',
-        'productInstanceId' => 'product_instance_id',
-        'outerOrderNo'      => 'outer_order_no',
-        'scene'             => 'scene',
-        'encType'           => 'enc_type',
-        'certName'          => 'cert_name',
-        'certNo'            => 'cert_no',
-        'externParam'       => 'extern_param',
-    ];
 
-    public function validate()
-    {
-        Model::validateRequired('outerOrderNo', $this->outerOrderNo, true);
-        Model::validateRequired('encType', $this->encType, true);
-        Model::validateRequired('certNo', $this->certNo, true);
-    }
-
-    public function toMap()
-    {
-        $res = [];
-        if (null !== $this->authToken) {
-            $res['auth_token'] = $this->authToken;
-        }
-        if (null !== $this->productInstanceId) {
-            $res['product_instance_id'] = $this->productInstanceId;
-        }
-        if (null !== $this->outerOrderNo) {
-            $res['outer_order_no'] = $this->outerOrderNo;
-        }
-        if (null !== $this->scene) {
-            $res['scene'] = $this->scene;
-        }
-        if (null !== $this->encType) {
-            $res['enc_type'] = $this->encType;
-        }
-        if (null !== $this->certName) {
-            $res['cert_name'] = $this->certName;
-        }
-        if (null !== $this->certNo) {
-            $res['cert_no'] = $this->certNo;
-        }
-        if (null !== $this->externParam) {
-            $res['extern_param'] = $this->externParam;
-        }
-
-        return $res;
-    }
-
-    /**
-     * @param array $map
-     *
-     * @return QuerySocialriskBriefRequest
-     */
-    public static function fromMap($map = [])
-    {
-        $model = new self();
-        if (isset($map['auth_token'])) {
-            $model->authToken = $map['auth_token'];
-        }
-        if (isset($map['product_instance_id'])) {
-            $model->productInstanceId = $map['product_instance_id'];
-        }
-        if (isset($map['outer_order_no'])) {
-            $model->outerOrderNo = $map['outer_order_no'];
-        }
-        if (isset($map['scene'])) {
-            $model->scene = $map['scene'];
-        }
-        if (isset($map['enc_type'])) {
-            $model->encType = $map['enc_type'];
-        }
-        if (isset($map['cert_name'])) {
-            $model->certName = $map['cert_name'];
-        }
-        if (isset($map['cert_no'])) {
-            $model->certNo = $map['cert_no'];
-        }
-        if (isset($map['extern_param'])) {
-            $model->externParam = $map['extern_param'];
-        }
-
-        return $model;
-    }
 }

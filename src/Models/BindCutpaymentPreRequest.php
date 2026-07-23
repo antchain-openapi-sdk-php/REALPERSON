@@ -1,13 +1,140 @@
 <?php
 
 // This file is auto-generated, don't edit it. Thanks.
-
 namespace AntChain\REALPERSON\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class BindCutpaymentPreRequest extends Model
-{
+class BindCutpaymentPreRequest extends Model {
+    protected $_name = [
+        'authToken' => 'auth_token',
+        'productInstanceId' => 'product_instance_id',
+        'outerOrderNo' => 'outer_order_no',
+        'encryptType' => 'encrypt_type',
+        'encryptToken' => 'encrypt_token',
+        'userId' => 'user_id',
+        'cardType' => 'card_type',
+        'cardPro' => 'card_pro',
+        'cardNo' => 'card_no',
+        'idCardType' => 'id_card_type',
+        'certName' => 'cert_name',
+        'certNo' => 'cert_no',
+        'mobile' => 'mobile',
+        'securityCode' => 'security_code',
+        'validDate' => 'valid_date',
+    ];
+    public function validate() {
+        Model::validateRequired('outerOrderNo', $this->outerOrderNo, true);
+        Model::validateRequired('userId', $this->userId, true);
+        Model::validateRequired('cardType', $this->cardType, true);
+        Model::validateRequired('cardNo', $this->cardNo, true);
+        Model::validateRequired('idCardType', $this->idCardType, true);
+        Model::validateRequired('certName', $this->certName, true);
+        Model::validateRequired('certNo', $this->certNo, true);
+        Model::validateRequired('mobile', $this->mobile, true);
+    }
+    public function toMap() {
+        $res = [];
+        if (null !== $this->authToken) {
+            $res['auth_token'] = $this->authToken;
+        }
+        if (null !== $this->productInstanceId) {
+            $res['product_instance_id'] = $this->productInstanceId;
+        }
+        if (null !== $this->outerOrderNo) {
+            $res['outer_order_no'] = $this->outerOrderNo;
+        }
+        if (null !== $this->encryptType) {
+            $res['encrypt_type'] = $this->encryptType;
+        }
+        if (null !== $this->encryptToken) {
+            $res['encrypt_token'] = $this->encryptToken;
+        }
+        if (null !== $this->userId) {
+            $res['user_id'] = $this->userId;
+        }
+        if (null !== $this->cardType) {
+            $res['card_type'] = $this->cardType;
+        }
+        if (null !== $this->cardPro) {
+            $res['card_pro'] = $this->cardPro;
+        }
+        if (null !== $this->cardNo) {
+            $res['card_no'] = $this->cardNo;
+        }
+        if (null !== $this->idCardType) {
+            $res['id_card_type'] = $this->idCardType;
+        }
+        if (null !== $this->certName) {
+            $res['cert_name'] = $this->certName;
+        }
+        if (null !== $this->certNo) {
+            $res['cert_no'] = $this->certNo;
+        }
+        if (null !== $this->mobile) {
+            $res['mobile'] = $this->mobile;
+        }
+        if (null !== $this->securityCode) {
+            $res['security_code'] = $this->securityCode;
+        }
+        if (null !== $this->validDate) {
+            $res['valid_date'] = $this->validDate;
+        }
+        return $res;
+    }
+    /**
+     * @param array $map
+     * @return BindCutpaymentPreRequest
+     */
+    public static function fromMap($map = []) {
+        $model = new self();
+        if(isset($map['auth_token'])){
+            $model->authToken = $map['auth_token'];
+        }
+        if(isset($map['product_instance_id'])){
+            $model->productInstanceId = $map['product_instance_id'];
+        }
+        if(isset($map['outer_order_no'])){
+            $model->outerOrderNo = $map['outer_order_no'];
+        }
+        if(isset($map['encrypt_type'])){
+            $model->encryptType = $map['encrypt_type'];
+        }
+        if(isset($map['encrypt_token'])){
+            $model->encryptToken = $map['encrypt_token'];
+        }
+        if(isset($map['user_id'])){
+            $model->userId = $map['user_id'];
+        }
+        if(isset($map['card_type'])){
+            $model->cardType = $map['card_type'];
+        }
+        if(isset($map['card_pro'])){
+            $model->cardPro = $map['card_pro'];
+        }
+        if(isset($map['card_no'])){
+            $model->cardNo = $map['card_no'];
+        }
+        if(isset($map['id_card_type'])){
+            $model->idCardType = $map['id_card_type'];
+        }
+        if(isset($map['cert_name'])){
+            $model->certName = $map['cert_name'];
+        }
+        if(isset($map['cert_no'])){
+            $model->certNo = $map['cert_no'];
+        }
+        if(isset($map['mobile'])){
+            $model->mobile = $map['mobile'];
+        }
+        if(isset($map['security_code'])){
+            $model->securityCode = $map['security_code'];
+        }
+        if(isset($map['valid_date'])){
+            $model->validDate = $map['valid_date'];
+        }
+        return $model;
+    }
     // OAuth模式下的授权token
     /**
      * @var string
@@ -106,142 +233,5 @@ class BindCutpaymentPreRequest extends Model
      * @var string
      */
     public $validDate;
-    protected $_name = [
-        'authToken'         => 'auth_token',
-        'productInstanceId' => 'product_instance_id',
-        'outerOrderNo'      => 'outer_order_no',
-        'encryptType'       => 'encrypt_type',
-        'encryptToken'      => 'encrypt_token',
-        'userId'            => 'user_id',
-        'cardType'          => 'card_type',
-        'cardPro'           => 'card_pro',
-        'cardNo'            => 'card_no',
-        'idCardType'        => 'id_card_type',
-        'certName'          => 'cert_name',
-        'certNo'            => 'cert_no',
-        'mobile'            => 'mobile',
-        'securityCode'      => 'security_code',
-        'validDate'         => 'valid_date',
-    ];
 
-    public function validate()
-    {
-        Model::validateRequired('outerOrderNo', $this->outerOrderNo, true);
-        Model::validateRequired('userId', $this->userId, true);
-        Model::validateRequired('cardType', $this->cardType, true);
-        Model::validateRequired('cardNo', $this->cardNo, true);
-        Model::validateRequired('idCardType', $this->idCardType, true);
-        Model::validateRequired('certName', $this->certName, true);
-        Model::validateRequired('certNo', $this->certNo, true);
-        Model::validateRequired('mobile', $this->mobile, true);
-    }
-
-    public function toMap()
-    {
-        $res = [];
-        if (null !== $this->authToken) {
-            $res['auth_token'] = $this->authToken;
-        }
-        if (null !== $this->productInstanceId) {
-            $res['product_instance_id'] = $this->productInstanceId;
-        }
-        if (null !== $this->outerOrderNo) {
-            $res['outer_order_no'] = $this->outerOrderNo;
-        }
-        if (null !== $this->encryptType) {
-            $res['encrypt_type'] = $this->encryptType;
-        }
-        if (null !== $this->encryptToken) {
-            $res['encrypt_token'] = $this->encryptToken;
-        }
-        if (null !== $this->userId) {
-            $res['user_id'] = $this->userId;
-        }
-        if (null !== $this->cardType) {
-            $res['card_type'] = $this->cardType;
-        }
-        if (null !== $this->cardPro) {
-            $res['card_pro'] = $this->cardPro;
-        }
-        if (null !== $this->cardNo) {
-            $res['card_no'] = $this->cardNo;
-        }
-        if (null !== $this->idCardType) {
-            $res['id_card_type'] = $this->idCardType;
-        }
-        if (null !== $this->certName) {
-            $res['cert_name'] = $this->certName;
-        }
-        if (null !== $this->certNo) {
-            $res['cert_no'] = $this->certNo;
-        }
-        if (null !== $this->mobile) {
-            $res['mobile'] = $this->mobile;
-        }
-        if (null !== $this->securityCode) {
-            $res['security_code'] = $this->securityCode;
-        }
-        if (null !== $this->validDate) {
-            $res['valid_date'] = $this->validDate;
-        }
-
-        return $res;
-    }
-
-    /**
-     * @param array $map
-     *
-     * @return BindCutpaymentPreRequest
-     */
-    public static function fromMap($map = [])
-    {
-        $model = new self();
-        if (isset($map['auth_token'])) {
-            $model->authToken = $map['auth_token'];
-        }
-        if (isset($map['product_instance_id'])) {
-            $model->productInstanceId = $map['product_instance_id'];
-        }
-        if (isset($map['outer_order_no'])) {
-            $model->outerOrderNo = $map['outer_order_no'];
-        }
-        if (isset($map['encrypt_type'])) {
-            $model->encryptType = $map['encrypt_type'];
-        }
-        if (isset($map['encrypt_token'])) {
-            $model->encryptToken = $map['encrypt_token'];
-        }
-        if (isset($map['user_id'])) {
-            $model->userId = $map['user_id'];
-        }
-        if (isset($map['card_type'])) {
-            $model->cardType = $map['card_type'];
-        }
-        if (isset($map['card_pro'])) {
-            $model->cardPro = $map['card_pro'];
-        }
-        if (isset($map['card_no'])) {
-            $model->cardNo = $map['card_no'];
-        }
-        if (isset($map['id_card_type'])) {
-            $model->idCardType = $map['id_card_type'];
-        }
-        if (isset($map['cert_name'])) {
-            $model->certName = $map['cert_name'];
-        }
-        if (isset($map['cert_no'])) {
-            $model->certNo = $map['cert_no'];
-        }
-        if (isset($map['mobile'])) {
-            $model->mobile = $map['mobile'];
-        }
-        if (isset($map['security_code'])) {
-            $model->securityCode = $map['security_code'];
-        }
-        if (isset($map['valid_date'])) {
-            $model->validDate = $map['valid_date'];
-        }
-
-        return $model;
-    }
 }

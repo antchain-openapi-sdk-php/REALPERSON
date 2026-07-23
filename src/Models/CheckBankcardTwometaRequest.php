@@ -1,13 +1,100 @@
 <?php
 
 // This file is auto-generated, don't edit it. Thanks.
-
 namespace AntChain\REALPERSON\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class CheckBankcardTwometaRequest extends Model
-{
+class CheckBankcardTwometaRequest extends Model {
+    protected $_name = [
+        'authToken' => 'auth_token',
+        'productInstanceId' => 'product_instance_id',
+        'outerOrderNo' => 'outer_order_no',
+        'metaMode' => 'meta_mode',
+        'certType' => 'cert_type',
+        'bankCard' => 'bank_card',
+        'mobile' => 'mobile',
+        'certName' => 'cert_name',
+        'certNo' => 'cert_no',
+        'externParam' => 'extern_param',
+    ];
+    public function validate() {
+        Model::validateRequired('outerOrderNo', $this->outerOrderNo, true);
+        Model::validateRequired('metaMode', $this->metaMode, true);
+        Model::validateRequired('bankCard', $this->bankCard, true);
+    }
+    public function toMap() {
+        $res = [];
+        if (null !== $this->authToken) {
+            $res['auth_token'] = $this->authToken;
+        }
+        if (null !== $this->productInstanceId) {
+            $res['product_instance_id'] = $this->productInstanceId;
+        }
+        if (null !== $this->outerOrderNo) {
+            $res['outer_order_no'] = $this->outerOrderNo;
+        }
+        if (null !== $this->metaMode) {
+            $res['meta_mode'] = $this->metaMode;
+        }
+        if (null !== $this->certType) {
+            $res['cert_type'] = $this->certType;
+        }
+        if (null !== $this->bankCard) {
+            $res['bank_card'] = $this->bankCard;
+        }
+        if (null !== $this->mobile) {
+            $res['mobile'] = $this->mobile;
+        }
+        if (null !== $this->certName) {
+            $res['cert_name'] = $this->certName;
+        }
+        if (null !== $this->certNo) {
+            $res['cert_no'] = $this->certNo;
+        }
+        if (null !== $this->externParam) {
+            $res['extern_param'] = $this->externParam;
+        }
+        return $res;
+    }
+    /**
+     * @param array $map
+     * @return CheckBankcardTwometaRequest
+     */
+    public static function fromMap($map = []) {
+        $model = new self();
+        if(isset($map['auth_token'])){
+            $model->authToken = $map['auth_token'];
+        }
+        if(isset($map['product_instance_id'])){
+            $model->productInstanceId = $map['product_instance_id'];
+        }
+        if(isset($map['outer_order_no'])){
+            $model->outerOrderNo = $map['outer_order_no'];
+        }
+        if(isset($map['meta_mode'])){
+            $model->metaMode = $map['meta_mode'];
+        }
+        if(isset($map['cert_type'])){
+            $model->certType = $map['cert_type'];
+        }
+        if(isset($map['bank_card'])){
+            $model->bankCard = $map['bank_card'];
+        }
+        if(isset($map['mobile'])){
+            $model->mobile = $map['mobile'];
+        }
+        if(isset($map['cert_name'])){
+            $model->certName = $map['cert_name'];
+        }
+        if(isset($map['cert_no'])){
+            $model->certNo = $map['cert_no'];
+        }
+        if(isset($map['extern_param'])){
+            $model->externParam = $map['extern_param'];
+        }
+        return $model;
+    }
     // OAuth模式下的授权token
     /**
      * @var string
@@ -66,102 +153,5 @@ class CheckBankcardTwometaRequest extends Model
      * @var string
      */
     public $externParam;
-    protected $_name = [
-        'authToken'         => 'auth_token',
-        'productInstanceId' => 'product_instance_id',
-        'outerOrderNo'      => 'outer_order_no',
-        'metaMode'          => 'meta_mode',
-        'certType'          => 'cert_type',
-        'bankCard'          => 'bank_card',
-        'mobile'            => 'mobile',
-        'certName'          => 'cert_name',
-        'certNo'            => 'cert_no',
-        'externParam'       => 'extern_param',
-    ];
 
-    public function validate()
-    {
-        Model::validateRequired('outerOrderNo', $this->outerOrderNo, true);
-        Model::validateRequired('metaMode', $this->metaMode, true);
-        Model::validateRequired('bankCard', $this->bankCard, true);
-    }
-
-    public function toMap()
-    {
-        $res = [];
-        if (null !== $this->authToken) {
-            $res['auth_token'] = $this->authToken;
-        }
-        if (null !== $this->productInstanceId) {
-            $res['product_instance_id'] = $this->productInstanceId;
-        }
-        if (null !== $this->outerOrderNo) {
-            $res['outer_order_no'] = $this->outerOrderNo;
-        }
-        if (null !== $this->metaMode) {
-            $res['meta_mode'] = $this->metaMode;
-        }
-        if (null !== $this->certType) {
-            $res['cert_type'] = $this->certType;
-        }
-        if (null !== $this->bankCard) {
-            $res['bank_card'] = $this->bankCard;
-        }
-        if (null !== $this->mobile) {
-            $res['mobile'] = $this->mobile;
-        }
-        if (null !== $this->certName) {
-            $res['cert_name'] = $this->certName;
-        }
-        if (null !== $this->certNo) {
-            $res['cert_no'] = $this->certNo;
-        }
-        if (null !== $this->externParam) {
-            $res['extern_param'] = $this->externParam;
-        }
-
-        return $res;
-    }
-
-    /**
-     * @param array $map
-     *
-     * @return CheckBankcardTwometaRequest
-     */
-    public static function fromMap($map = [])
-    {
-        $model = new self();
-        if (isset($map['auth_token'])) {
-            $model->authToken = $map['auth_token'];
-        }
-        if (isset($map['product_instance_id'])) {
-            $model->productInstanceId = $map['product_instance_id'];
-        }
-        if (isset($map['outer_order_no'])) {
-            $model->outerOrderNo = $map['outer_order_no'];
-        }
-        if (isset($map['meta_mode'])) {
-            $model->metaMode = $map['meta_mode'];
-        }
-        if (isset($map['cert_type'])) {
-            $model->certType = $map['cert_type'];
-        }
-        if (isset($map['bank_card'])) {
-            $model->bankCard = $map['bank_card'];
-        }
-        if (isset($map['mobile'])) {
-            $model->mobile = $map['mobile'];
-        }
-        if (isset($map['cert_name'])) {
-            $model->certName = $map['cert_name'];
-        }
-        if (isset($map['cert_no'])) {
-            $model->certNo = $map['cert_no'];
-        }
-        if (isset($map['extern_param'])) {
-            $model->externParam = $map['extern_param'];
-        }
-
-        return $model;
-    }
 }

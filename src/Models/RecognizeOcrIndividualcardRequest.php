@@ -1,14 +1,141 @@
 <?php
 
 // This file is auto-generated, don't edit it. Thanks.
-
 namespace AntChain\REALPERSON\Models;
 
 use AlibabaCloud\Tea\Model;
 use GuzzleHttp\Psr7\Stream;
 
-class RecognizeOcrIndividualcardRequest extends Model
-{
+class RecognizeOcrIndividualcardRequest extends Model {
+    protected $_name = [
+        'authToken' => 'auth_token',
+        'productInstanceId' => 'product_instance_id',
+        'outerOrderNo' => 'outer_order_no',
+        'ocrType' => 'ocr_type',
+        'dataType' => 'data_type',
+        'dataContent' => 'data_content',
+        'fileId' => 'file_id',
+        'reqEncType' => 'req_enc_type',
+        'respEncType' => 'resp_enc_type',
+        'encToken' => 'enc_token',
+        'riskInfoType' => 'risk_info_type',
+        'returnPhoto' => 'return_photo',
+        'returnImage' => 'return_image',
+        'externParam' => 'extern_param',
+    ];
+    public function validate() {
+        Model::validateRequired('outerOrderNo', $this->outerOrderNo, true);
+        Model::validateRequired('ocrType', $this->ocrType, true);
+        Model::validateRequired('dataType', $this->dataType, true);
+    }
+    public function toMap() {
+        $res = [];
+        if (null !== $this->authToken) {
+            $res['auth_token'] = $this->authToken;
+        }
+        if (null !== $this->productInstanceId) {
+            $res['product_instance_id'] = $this->productInstanceId;
+        }
+        if (null !== $this->outerOrderNo) {
+            $res['outer_order_no'] = $this->outerOrderNo;
+        }
+        if (null !== $this->ocrType) {
+            $res['ocr_type'] = $this->ocrType;
+        }
+        if (null !== $this->dataType) {
+            $res['data_type'] = $this->dataType;
+        }
+        if (null !== $this->dataContent) {
+            $res['data_content'] = $this->dataContent;
+        }
+        if (null !== $this->fileObject) {
+            $res['fileObject'] = $this->fileObject;
+        }
+        if (null !== $this->fileObjectName) {
+            $res['fileObjectName'] = $this->fileObjectName;
+        }
+        if (null !== $this->fileId) {
+            $res['file_id'] = $this->fileId;
+        }
+        if (null !== $this->reqEncType) {
+            $res['req_enc_type'] = $this->reqEncType;
+        }
+        if (null !== $this->respEncType) {
+            $res['resp_enc_type'] = $this->respEncType;
+        }
+        if (null !== $this->encToken) {
+            $res['enc_token'] = $this->encToken;
+        }
+        if (null !== $this->riskInfoType) {
+            $res['risk_info_type'] = $this->riskInfoType;
+        }
+        if (null !== $this->returnPhoto) {
+            $res['return_photo'] = $this->returnPhoto;
+        }
+        if (null !== $this->returnImage) {
+            $res['return_image'] = $this->returnImage;
+        }
+        if (null !== $this->externParam) {
+            $res['extern_param'] = $this->externParam;
+        }
+        return $res;
+    }
+    /**
+     * @param array $map
+     * @return RecognizeOcrIndividualcardRequest
+     */
+    public static function fromMap($map = []) {
+        $model = new self();
+        if(isset($map['auth_token'])){
+            $model->authToken = $map['auth_token'];
+        }
+        if(isset($map['product_instance_id'])){
+            $model->productInstanceId = $map['product_instance_id'];
+        }
+        if(isset($map['outer_order_no'])){
+            $model->outerOrderNo = $map['outer_order_no'];
+        }
+        if(isset($map['ocr_type'])){
+            $model->ocrType = $map['ocr_type'];
+        }
+        if(isset($map['data_type'])){
+            $model->dataType = $map['data_type'];
+        }
+        if(isset($map['data_content'])){
+            $model->dataContent = $map['data_content'];
+        }
+        if(isset($map['fileObject'])){
+            $model->fileObject = $map['fileObject'];
+        }
+        if(isset($map['fileObjectName'])){
+            $model->fileObjectName = $map['fileObjectName'];
+        }
+        if(isset($map['file_id'])){
+            $model->fileId = $map['file_id'];
+        }
+        if(isset($map['req_enc_type'])){
+            $model->reqEncType = $map['req_enc_type'];
+        }
+        if(isset($map['resp_enc_type'])){
+            $model->respEncType = $map['resp_enc_type'];
+        }
+        if(isset($map['enc_token'])){
+            $model->encToken = $map['enc_token'];
+        }
+        if(isset($map['risk_info_type'])){
+            $model->riskInfoType = $map['risk_info_type'];
+        }
+        if(isset($map['return_photo'])){
+            $model->returnPhoto = $map['return_photo'];
+        }
+        if(isset($map['return_image'])){
+            $model->returnImage = $map['return_image'];
+        }
+        if(isset($map['extern_param'])){
+            $model->externParam = $map['extern_param'];
+        }
+        return $model;
+    }
     // OAuth模式下的授权token
     /**
      * @var string
@@ -39,7 +166,7 @@ class RecognizeOcrIndividualcardRequest extends Model
     public $dataType;
 
     // 传入的图片的具体内容，需要与data_type的选择保持一致。
-    //
+    // 
     /**
      * @var string
      */
@@ -48,14 +175,12 @@ class RecognizeOcrIndividualcardRequest extends Model
     // 证件图片
     /**
      * @description 待上传文件
-     *
      * @var Stream
      */
     public $fileObject;
 
     /**
      * @description 待上传文件名
-     *
      * @var string
      */
     public $fileObjectName;
@@ -106,142 +231,5 @@ class RecognizeOcrIndividualcardRequest extends Model
      * @var string
      */
     public $externParam;
-    protected $_name = [
-        'authToken'         => 'auth_token',
-        'productInstanceId' => 'product_instance_id',
-        'outerOrderNo'      => 'outer_order_no',
-        'ocrType'           => 'ocr_type',
-        'dataType'          => 'data_type',
-        'dataContent'       => 'data_content',
-        'fileId'            => 'file_id',
-        'reqEncType'        => 'req_enc_type',
-        'respEncType'       => 'resp_enc_type',
-        'encToken'          => 'enc_token',
-        'riskInfoType'      => 'risk_info_type',
-        'returnPhoto'       => 'return_photo',
-        'returnImage'       => 'return_image',
-        'externParam'       => 'extern_param',
-    ];
 
-    public function validate()
-    {
-        Model::validateRequired('outerOrderNo', $this->outerOrderNo, true);
-        Model::validateRequired('ocrType', $this->ocrType, true);
-        Model::validateRequired('dataType', $this->dataType, true);
-    }
-
-    public function toMap()
-    {
-        $res = [];
-        if (null !== $this->authToken) {
-            $res['auth_token'] = $this->authToken;
-        }
-        if (null !== $this->productInstanceId) {
-            $res['product_instance_id'] = $this->productInstanceId;
-        }
-        if (null !== $this->outerOrderNo) {
-            $res['outer_order_no'] = $this->outerOrderNo;
-        }
-        if (null !== $this->ocrType) {
-            $res['ocr_type'] = $this->ocrType;
-        }
-        if (null !== $this->dataType) {
-            $res['data_type'] = $this->dataType;
-        }
-        if (null !== $this->dataContent) {
-            $res['data_content'] = $this->dataContent;
-        }
-        if (null !== $this->fileObject) {
-            $res['fileObject'] = $this->fileObject;
-        }
-        if (null !== $this->fileObjectName) {
-            $res['fileObjectName'] = $this->fileObjectName;
-        }
-        if (null !== $this->fileId) {
-            $res['file_id'] = $this->fileId;
-        }
-        if (null !== $this->reqEncType) {
-            $res['req_enc_type'] = $this->reqEncType;
-        }
-        if (null !== $this->respEncType) {
-            $res['resp_enc_type'] = $this->respEncType;
-        }
-        if (null !== $this->encToken) {
-            $res['enc_token'] = $this->encToken;
-        }
-        if (null !== $this->riskInfoType) {
-            $res['risk_info_type'] = $this->riskInfoType;
-        }
-        if (null !== $this->returnPhoto) {
-            $res['return_photo'] = $this->returnPhoto;
-        }
-        if (null !== $this->returnImage) {
-            $res['return_image'] = $this->returnImage;
-        }
-        if (null !== $this->externParam) {
-            $res['extern_param'] = $this->externParam;
-        }
-
-        return $res;
-    }
-
-    /**
-     * @param array $map
-     *
-     * @return RecognizeOcrIndividualcardRequest
-     */
-    public static function fromMap($map = [])
-    {
-        $model = new self();
-        if (isset($map['auth_token'])) {
-            $model->authToken = $map['auth_token'];
-        }
-        if (isset($map['product_instance_id'])) {
-            $model->productInstanceId = $map['product_instance_id'];
-        }
-        if (isset($map['outer_order_no'])) {
-            $model->outerOrderNo = $map['outer_order_no'];
-        }
-        if (isset($map['ocr_type'])) {
-            $model->ocrType = $map['ocr_type'];
-        }
-        if (isset($map['data_type'])) {
-            $model->dataType = $map['data_type'];
-        }
-        if (isset($map['data_content'])) {
-            $model->dataContent = $map['data_content'];
-        }
-        if (isset($map['fileObject'])) {
-            $model->fileObject = $map['fileObject'];
-        }
-        if (isset($map['fileObjectName'])) {
-            $model->fileObjectName = $map['fileObjectName'];
-        }
-        if (isset($map['file_id'])) {
-            $model->fileId = $map['file_id'];
-        }
-        if (isset($map['req_enc_type'])) {
-            $model->reqEncType = $map['req_enc_type'];
-        }
-        if (isset($map['resp_enc_type'])) {
-            $model->respEncType = $map['resp_enc_type'];
-        }
-        if (isset($map['enc_token'])) {
-            $model->encToken = $map['enc_token'];
-        }
-        if (isset($map['risk_info_type'])) {
-            $model->riskInfoType = $map['risk_info_type'];
-        }
-        if (isset($map['return_photo'])) {
-            $model->returnPhoto = $map['return_photo'];
-        }
-        if (isset($map['return_image'])) {
-            $model->returnImage = $map['return_image'];
-        }
-        if (isset($map['extern_param'])) {
-            $model->externParam = $map['extern_param'];
-        }
-
-        return $model;
-    }
 }

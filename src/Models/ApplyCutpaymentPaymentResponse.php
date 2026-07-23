@@ -1,13 +1,75 @@
 <?php
 
 // This file is auto-generated, don't edit it. Thanks.
-
 namespace AntChain\REALPERSON\Models;
 
 use AlibabaCloud\Tea\Model;
 
-class ApplyCutpaymentPaymentResponse extends Model
-{
+class ApplyCutpaymentPaymentResponse extends Model {
+    protected $_name = [
+        'reqMsgId' => 'req_msg_id',
+        'resultCode' => 'result_code',
+        'resultMsg' => 'result_msg',
+        'succAmt' => 'succ_amt',
+        'succTime' => 'succ_time',
+        'orderId' => 'order_id',
+        'transId' => 'trans_id',
+    ];
+    public function validate() {}
+    public function toMap() {
+        $res = [];
+        if (null !== $this->reqMsgId) {
+            $res['req_msg_id'] = $this->reqMsgId;
+        }
+        if (null !== $this->resultCode) {
+            $res['result_code'] = $this->resultCode;
+        }
+        if (null !== $this->resultMsg) {
+            $res['result_msg'] = $this->resultMsg;
+        }
+        if (null !== $this->succAmt) {
+            $res['succ_amt'] = $this->succAmt;
+        }
+        if (null !== $this->succTime) {
+            $res['succ_time'] = $this->succTime;
+        }
+        if (null !== $this->orderId) {
+            $res['order_id'] = $this->orderId;
+        }
+        if (null !== $this->transId) {
+            $res['trans_id'] = $this->transId;
+        }
+        return $res;
+    }
+    /**
+     * @param array $map
+     * @return ApplyCutpaymentPaymentResponse
+     */
+    public static function fromMap($map = []) {
+        $model = new self();
+        if(isset($map['req_msg_id'])){
+            $model->reqMsgId = $map['req_msg_id'];
+        }
+        if(isset($map['result_code'])){
+            $model->resultCode = $map['result_code'];
+        }
+        if(isset($map['result_msg'])){
+            $model->resultMsg = $map['result_msg'];
+        }
+        if(isset($map['succ_amt'])){
+            $model->succAmt = $map['succ_amt'];
+        }
+        if(isset($map['succ_time'])){
+            $model->succTime = $map['succ_time'];
+        }
+        if(isset($map['order_id'])){
+            $model->orderId = $map['order_id'];
+        }
+        if(isset($map['trans_id'])){
+            $model->transId = $map['trans_id'];
+        }
+        return $model;
+    }
     // 请求唯一ID，用于链路跟踪和问题排查
     /**
      * @var string
@@ -49,78 +111,5 @@ class ApplyCutpaymentPaymentResponse extends Model
      * @var string
      */
     public $transId;
-    protected $_name = [
-        'reqMsgId'   => 'req_msg_id',
-        'resultCode' => 'result_code',
-        'resultMsg'  => 'result_msg',
-        'succAmt'    => 'succ_amt',
-        'succTime'   => 'succ_time',
-        'orderId'    => 'order_id',
-        'transId'    => 'trans_id',
-    ];
 
-    public function validate()
-    {
-    }
-
-    public function toMap()
-    {
-        $res = [];
-        if (null !== $this->reqMsgId) {
-            $res['req_msg_id'] = $this->reqMsgId;
-        }
-        if (null !== $this->resultCode) {
-            $res['result_code'] = $this->resultCode;
-        }
-        if (null !== $this->resultMsg) {
-            $res['result_msg'] = $this->resultMsg;
-        }
-        if (null !== $this->succAmt) {
-            $res['succ_amt'] = $this->succAmt;
-        }
-        if (null !== $this->succTime) {
-            $res['succ_time'] = $this->succTime;
-        }
-        if (null !== $this->orderId) {
-            $res['order_id'] = $this->orderId;
-        }
-        if (null !== $this->transId) {
-            $res['trans_id'] = $this->transId;
-        }
-
-        return $res;
-    }
-
-    /**
-     * @param array $map
-     *
-     * @return ApplyCutpaymentPaymentResponse
-     */
-    public static function fromMap($map = [])
-    {
-        $model = new self();
-        if (isset($map['req_msg_id'])) {
-            $model->reqMsgId = $map['req_msg_id'];
-        }
-        if (isset($map['result_code'])) {
-            $model->resultCode = $map['result_code'];
-        }
-        if (isset($map['result_msg'])) {
-            $model->resultMsg = $map['result_msg'];
-        }
-        if (isset($map['succ_amt'])) {
-            $model->succAmt = $map['succ_amt'];
-        }
-        if (isset($map['succ_time'])) {
-            $model->succTime = $map['succ_time'];
-        }
-        if (isset($map['order_id'])) {
-            $model->orderId = $map['order_id'];
-        }
-        if (isset($map['trans_id'])) {
-            $model->transId = $map['trans_id'];
-        }
-
-        return $model;
-    }
 }

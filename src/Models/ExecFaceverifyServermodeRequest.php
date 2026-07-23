@@ -1,14 +1,183 @@
 <?php
 
 // This file is auto-generated, don't edit it. Thanks.
-
 namespace AntChain\REALPERSON\Models;
 
 use AlibabaCloud\Tea\Model;
 use GuzzleHttp\Psr7\Stream;
 
-class ExecFaceverifyServermodeRequest extends Model
-{
+class ExecFaceverifyServermodeRequest extends Model {
+    protected $_name = [
+        'authToken' => 'auth_token',
+        'productInstanceId' => 'product_instance_id',
+        'certName' => 'cert_name',
+        'certNo' => 'cert_no',
+        'encType' => 'enc_type',
+        'certType' => 'cert_type',
+        'externParam' => 'extern_param',
+        'facialPictureRef' => 'facial_picture_ref',
+        'identityType' => 'identity_type',
+        'outerOrderNo' => 'outer_order_no',
+        'sceneId' => 'scene_id',
+        'userId' => 'user_id',
+        'userIp' => 'user_ip',
+        'userMobile' => 'user_mobile',
+        'facialPictureAuth' => 'facial_picture_auth',
+        'fileId' => 'file_id',
+        'materialEncType' => 'material_enc_type',
+        'materialEncToken' => 'material_enc_token',
+        'facialPictureRefFileId' => 'facial_picture_ref_file_id',
+        'facialPictureAuthFileId' => 'facial_picture_auth_file_id',
+    ];
+    public function validate() {
+        Model::validateRequired('identityType', $this->identityType, true);
+        Model::validateRequired('outerOrderNo', $this->outerOrderNo, true);
+        Model::validateRequired('sceneId', $this->sceneId, true);
+    }
+    public function toMap() {
+        $res = [];
+        if (null !== $this->authToken) {
+            $res['auth_token'] = $this->authToken;
+        }
+        if (null !== $this->productInstanceId) {
+            $res['product_instance_id'] = $this->productInstanceId;
+        }
+        if (null !== $this->certName) {
+            $res['cert_name'] = $this->certName;
+        }
+        if (null !== $this->certNo) {
+            $res['cert_no'] = $this->certNo;
+        }
+        if (null !== $this->encType) {
+            $res['enc_type'] = $this->encType;
+        }
+        if (null !== $this->certType) {
+            $res['cert_type'] = $this->certType;
+        }
+        if (null !== $this->externParam) {
+            $res['extern_param'] = $this->externParam;
+        }
+        if (null !== $this->facialPictureRef) {
+            $res['facial_picture_ref'] = $this->facialPictureRef;
+        }
+        if (null !== $this->identityType) {
+            $res['identity_type'] = $this->identityType;
+        }
+        if (null !== $this->outerOrderNo) {
+            $res['outer_order_no'] = $this->outerOrderNo;
+        }
+        if (null !== $this->sceneId) {
+            $res['scene_id'] = $this->sceneId;
+        }
+        if (null !== $this->userId) {
+            $res['user_id'] = $this->userId;
+        }
+        if (null !== $this->userIp) {
+            $res['user_ip'] = $this->userIp;
+        }
+        if (null !== $this->userMobile) {
+            $res['user_mobile'] = $this->userMobile;
+        }
+        if (null !== $this->facialPictureAuth) {
+            $res['facial_picture_auth'] = $this->facialPictureAuth;
+        }
+        if (null !== $this->fileObject) {
+            $res['fileObject'] = $this->fileObject;
+        }
+        if (null !== $this->fileObjectName) {
+            $res['fileObjectName'] = $this->fileObjectName;
+        }
+        if (null !== $this->fileId) {
+            $res['file_id'] = $this->fileId;
+        }
+        if (null !== $this->materialEncType) {
+            $res['material_enc_type'] = $this->materialEncType;
+        }
+        if (null !== $this->materialEncToken) {
+            $res['material_enc_token'] = $this->materialEncToken;
+        }
+        if (null !== $this->facialPictureRefFileId) {
+            $res['facial_picture_ref_file_id'] = $this->facialPictureRefFileId;
+        }
+        if (null !== $this->facialPictureAuthFileId) {
+            $res['facial_picture_auth_file_id'] = $this->facialPictureAuthFileId;
+        }
+        return $res;
+    }
+    /**
+     * @param array $map
+     * @return ExecFaceverifyServermodeRequest
+     */
+    public static function fromMap($map = []) {
+        $model = new self();
+        if(isset($map['auth_token'])){
+            $model->authToken = $map['auth_token'];
+        }
+        if(isset($map['product_instance_id'])){
+            $model->productInstanceId = $map['product_instance_id'];
+        }
+        if(isset($map['cert_name'])){
+            $model->certName = $map['cert_name'];
+        }
+        if(isset($map['cert_no'])){
+            $model->certNo = $map['cert_no'];
+        }
+        if(isset($map['enc_type'])){
+            $model->encType = $map['enc_type'];
+        }
+        if(isset($map['cert_type'])){
+            $model->certType = $map['cert_type'];
+        }
+        if(isset($map['extern_param'])){
+            $model->externParam = $map['extern_param'];
+        }
+        if(isset($map['facial_picture_ref'])){
+            $model->facialPictureRef = $map['facial_picture_ref'];
+        }
+        if(isset($map['identity_type'])){
+            $model->identityType = $map['identity_type'];
+        }
+        if(isset($map['outer_order_no'])){
+            $model->outerOrderNo = $map['outer_order_no'];
+        }
+        if(isset($map['scene_id'])){
+            $model->sceneId = $map['scene_id'];
+        }
+        if(isset($map['user_id'])){
+            $model->userId = $map['user_id'];
+        }
+        if(isset($map['user_ip'])){
+            $model->userIp = $map['user_ip'];
+        }
+        if(isset($map['user_mobile'])){
+            $model->userMobile = $map['user_mobile'];
+        }
+        if(isset($map['facial_picture_auth'])){
+            $model->facialPictureAuth = $map['facial_picture_auth'];
+        }
+        if(isset($map['fileObject'])){
+            $model->fileObject = $map['fileObject'];
+        }
+        if(isset($map['fileObjectName'])){
+            $model->fileObjectName = $map['fileObjectName'];
+        }
+        if(isset($map['file_id'])){
+            $model->fileId = $map['file_id'];
+        }
+        if(isset($map['material_enc_type'])){
+            $model->materialEncType = $map['material_enc_type'];
+        }
+        if(isset($map['material_enc_token'])){
+            $model->materialEncToken = $map['material_enc_token'];
+        }
+        if(isset($map['facial_picture_ref_file_id'])){
+            $model->facialPictureRefFileId = $map['facial_picture_ref_file_id'];
+        }
+        if(isset($map['facial_picture_auth_file_id'])){
+            $model->facialPictureAuthFileId = $map['facial_picture_auth_file_id'];
+        }
+        return $model;
+    }
     // OAuth模式下的授权token
     /**
      * @var string
@@ -101,14 +270,12 @@ class ExecFaceverifyServermodeRequest extends Model
     // 视频文件
     /**
      * @description 待上传文件
-     *
      * @var Stream
      */
     public $fileObject;
 
     /**
      * @description 待上传文件名
-     *
      * @var string
      */
     public $fileObjectName;
@@ -141,184 +308,5 @@ class ExecFaceverifyServermodeRequest extends Model
      * @var string
      */
     public $facialPictureAuthFileId;
-    protected $_name = [
-        'authToken'               => 'auth_token',
-        'productInstanceId'       => 'product_instance_id',
-        'certName'                => 'cert_name',
-        'certNo'                  => 'cert_no',
-        'encType'                 => 'enc_type',
-        'certType'                => 'cert_type',
-        'externParam'             => 'extern_param',
-        'facialPictureRef'        => 'facial_picture_ref',
-        'identityType'            => 'identity_type',
-        'outerOrderNo'            => 'outer_order_no',
-        'sceneId'                 => 'scene_id',
-        'userId'                  => 'user_id',
-        'userIp'                  => 'user_ip',
-        'userMobile'              => 'user_mobile',
-        'facialPictureAuth'       => 'facial_picture_auth',
-        'fileId'                  => 'file_id',
-        'materialEncType'         => 'material_enc_type',
-        'materialEncToken'        => 'material_enc_token',
-        'facialPictureRefFileId'  => 'facial_picture_ref_file_id',
-        'facialPictureAuthFileId' => 'facial_picture_auth_file_id',
-    ];
 
-    public function validate()
-    {
-        Model::validateRequired('identityType', $this->identityType, true);
-        Model::validateRequired('outerOrderNo', $this->outerOrderNo, true);
-        Model::validateRequired('sceneId', $this->sceneId, true);
-    }
-
-    public function toMap()
-    {
-        $res = [];
-        if (null !== $this->authToken) {
-            $res['auth_token'] = $this->authToken;
-        }
-        if (null !== $this->productInstanceId) {
-            $res['product_instance_id'] = $this->productInstanceId;
-        }
-        if (null !== $this->certName) {
-            $res['cert_name'] = $this->certName;
-        }
-        if (null !== $this->certNo) {
-            $res['cert_no'] = $this->certNo;
-        }
-        if (null !== $this->encType) {
-            $res['enc_type'] = $this->encType;
-        }
-        if (null !== $this->certType) {
-            $res['cert_type'] = $this->certType;
-        }
-        if (null !== $this->externParam) {
-            $res['extern_param'] = $this->externParam;
-        }
-        if (null !== $this->facialPictureRef) {
-            $res['facial_picture_ref'] = $this->facialPictureRef;
-        }
-        if (null !== $this->identityType) {
-            $res['identity_type'] = $this->identityType;
-        }
-        if (null !== $this->outerOrderNo) {
-            $res['outer_order_no'] = $this->outerOrderNo;
-        }
-        if (null !== $this->sceneId) {
-            $res['scene_id'] = $this->sceneId;
-        }
-        if (null !== $this->userId) {
-            $res['user_id'] = $this->userId;
-        }
-        if (null !== $this->userIp) {
-            $res['user_ip'] = $this->userIp;
-        }
-        if (null !== $this->userMobile) {
-            $res['user_mobile'] = $this->userMobile;
-        }
-        if (null !== $this->facialPictureAuth) {
-            $res['facial_picture_auth'] = $this->facialPictureAuth;
-        }
-        if (null !== $this->fileObject) {
-            $res['fileObject'] = $this->fileObject;
-        }
-        if (null !== $this->fileObjectName) {
-            $res['fileObjectName'] = $this->fileObjectName;
-        }
-        if (null !== $this->fileId) {
-            $res['file_id'] = $this->fileId;
-        }
-        if (null !== $this->materialEncType) {
-            $res['material_enc_type'] = $this->materialEncType;
-        }
-        if (null !== $this->materialEncToken) {
-            $res['material_enc_token'] = $this->materialEncToken;
-        }
-        if (null !== $this->facialPictureRefFileId) {
-            $res['facial_picture_ref_file_id'] = $this->facialPictureRefFileId;
-        }
-        if (null !== $this->facialPictureAuthFileId) {
-            $res['facial_picture_auth_file_id'] = $this->facialPictureAuthFileId;
-        }
-
-        return $res;
-    }
-
-    /**
-     * @param array $map
-     *
-     * @return ExecFaceverifyServermodeRequest
-     */
-    public static function fromMap($map = [])
-    {
-        $model = new self();
-        if (isset($map['auth_token'])) {
-            $model->authToken = $map['auth_token'];
-        }
-        if (isset($map['product_instance_id'])) {
-            $model->productInstanceId = $map['product_instance_id'];
-        }
-        if (isset($map['cert_name'])) {
-            $model->certName = $map['cert_name'];
-        }
-        if (isset($map['cert_no'])) {
-            $model->certNo = $map['cert_no'];
-        }
-        if (isset($map['enc_type'])) {
-            $model->encType = $map['enc_type'];
-        }
-        if (isset($map['cert_type'])) {
-            $model->certType = $map['cert_type'];
-        }
-        if (isset($map['extern_param'])) {
-            $model->externParam = $map['extern_param'];
-        }
-        if (isset($map['facial_picture_ref'])) {
-            $model->facialPictureRef = $map['facial_picture_ref'];
-        }
-        if (isset($map['identity_type'])) {
-            $model->identityType = $map['identity_type'];
-        }
-        if (isset($map['outer_order_no'])) {
-            $model->outerOrderNo = $map['outer_order_no'];
-        }
-        if (isset($map['scene_id'])) {
-            $model->sceneId = $map['scene_id'];
-        }
-        if (isset($map['user_id'])) {
-            $model->userId = $map['user_id'];
-        }
-        if (isset($map['user_ip'])) {
-            $model->userIp = $map['user_ip'];
-        }
-        if (isset($map['user_mobile'])) {
-            $model->userMobile = $map['user_mobile'];
-        }
-        if (isset($map['facial_picture_auth'])) {
-            $model->facialPictureAuth = $map['facial_picture_auth'];
-        }
-        if (isset($map['fileObject'])) {
-            $model->fileObject = $map['fileObject'];
-        }
-        if (isset($map['fileObjectName'])) {
-            $model->fileObjectName = $map['fileObjectName'];
-        }
-        if (isset($map['file_id'])) {
-            $model->fileId = $map['file_id'];
-        }
-        if (isset($map['material_enc_type'])) {
-            $model->materialEncType = $map['material_enc_type'];
-        }
-        if (isset($map['material_enc_token'])) {
-            $model->materialEncToken = $map['material_enc_token'];
-        }
-        if (isset($map['facial_picture_ref_file_id'])) {
-            $model->facialPictureRefFileId = $map['facial_picture_ref_file_id'];
-        }
-        if (isset($map['facial_picture_auth_file_id'])) {
-            $model->facialPictureAuthFileId = $map['facial_picture_auth_file_id'];
-        }
-
-        return $model;
-    }
 }
