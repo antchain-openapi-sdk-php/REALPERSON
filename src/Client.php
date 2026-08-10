@@ -178,6 +178,10 @@ use AntChain\REALPERSON\Models\QueryRiderQualificationRequest;
 use AntChain\REALPERSON\Models\QueryRiderQualificationResponse;
 use AntChain\REALPERSON\Models\VerificationUserVehicleRequest;
 use AntChain\REALPERSON\Models\VerificationUserVehicleResponse;
+use AntChain\REALPERSON\Models\QueryThreemetaPhonereuseproxRequest;
+use AntChain\REALPERSON\Models\QueryThreemetaPhonereuseproxResponse;
+use AntChain\REALPERSON\Models\QueryThreemetaPhonereusexRequest;
+use AntChain\REALPERSON\Models\QueryThreemetaPhonereusexResponse;
 use AntChain\REALPERSON\Models\InitServerWillauthRequest;
 use AntChain\REALPERSON\Models\InitServerWillauthResponse;
 use AntChain\REALPERSON\Models\QueryServerWillauthRequest;
@@ -329,7 +333,7 @@ class Client {
                     "req_msg_id" => UtilClient::getNonce(),
                     "access_key" => $this->_accessKeyId,
                     "base_sdk_version" => "TeaSDK-2.0",
-                    "sdk_version" => "1.22.45",
+                    "sdk_version" => "1.23.3",
                     "_prod_code" => "REALPERSON",
                     "_prod_channel" => "undefined"
                 ];
@@ -2602,6 +2606,56 @@ class Client {
     public function verificationUserVehicleEx($request, $headers, $runtime){
         Utils::validateModel($request);
         return VerificationUserVehicleResponse::fromMap($this->doRequest("1.0", "di.realperson.user.vehicle.verification", "HTTPS", "POST", "/gateway.do", Tea::merge($request), $headers, $runtime));
+    }
+
+    /**
+     * Description: 运营商二次放号增强版扩展接口
+     * Summary: 运营商二次放号增强版扩展接口
+     * @param QueryThreemetaPhonereuseproxRequest $request
+     * @return QueryThreemetaPhonereuseproxResponse
+     */
+    public function queryThreemetaPhonereuseprox($request){
+        $runtime = new RuntimeOptions([]);
+        $headers = [];
+        return $this->queryThreemetaPhonereuseproxEx($request, $headers, $runtime);
+    }
+
+    /**
+     * Description: 运营商二次放号增强版扩展接口
+     * Summary: 运营商二次放号增强版扩展接口
+     * @param QueryThreemetaPhonereuseproxRequest $request
+     * @param string[] $headers
+     * @param RuntimeOptions $runtime
+     * @return QueryThreemetaPhonereuseproxResponse
+     */
+    public function queryThreemetaPhonereuseproxEx($request, $headers, $runtime){
+        Utils::validateModel($request);
+        return QueryThreemetaPhonereuseproxResponse::fromMap($this->doRequest("1.0", "di.realperson.threemeta.phonereuseprox.query", "HTTPS", "POST", "/gateway.do", Tea::merge($request), $headers, $runtime));
+    }
+
+    /**
+     * Description: 运营商二次放号扩展接口
+     * Summary: 运营商二次放号扩展接口
+     * @param QueryThreemetaPhonereusexRequest $request
+     * @return QueryThreemetaPhonereusexResponse
+     */
+    public function queryThreemetaPhonereusex($request){
+        $runtime = new RuntimeOptions([]);
+        $headers = [];
+        return $this->queryThreemetaPhonereusexEx($request, $headers, $runtime);
+    }
+
+    /**
+     * Description: 运营商二次放号扩展接口
+     * Summary: 运营商二次放号扩展接口
+     * @param QueryThreemetaPhonereusexRequest $request
+     * @param string[] $headers
+     * @param RuntimeOptions $runtime
+     * @return QueryThreemetaPhonereusexResponse
+     */
+    public function queryThreemetaPhonereusexEx($request, $headers, $runtime){
+        Utils::validateModel($request);
+        return QueryThreemetaPhonereusexResponse::fromMap($this->doRequest("1.0", "di.realperson.threemeta.phonereusex.query", "HTTPS", "POST", "/gateway.do", Tea::merge($request), $headers, $runtime));
     }
 
     /**

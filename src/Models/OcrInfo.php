@@ -54,6 +54,29 @@ class OcrInfo extends Model {
         'fuel' => 'fuel',
         'tractionMass' => 'traction_mass',
         'chipNum' => 'chip_num',
+        'passportType' => 'passport_type',
+        'surname' => 'surname',
+        'givenName' => 'given_name',
+        'passportNumber' => 'passport_number',
+        'nameEn' => 'name_en',
+        'birthPlaceEn' => 'birth_place_en',
+        'birthPlace' => 'birth_place',
+        'country' => 'country',
+        'birthDate' => 'birth_date',
+        'birthDateYmd' => 'birth_date_ymd',
+        'issueDateYmd' => 'issue_date_ymd',
+        'issuePlaceEn' => 'issue_place_en',
+        'issuePlace' => 'issue_place',
+        'issueAuthorityEn' => 'issue_authority_en',
+        'issueAuthority' => 'issue_authority',
+        'idNumber' => 'id_number',
+        'mrzLine1' => 'mrz_line1',
+        'mrzLine2' => 'mrz_line2',
+        'permitType' => 'permit_type',
+        'nameCn' => 'name_cn',
+        'validPeriod' => 'valid_period',
+        'permitNumber' => 'permit_number',
+        'mrzCode' => 'mrz_code',
     ];
     public function validate() {}
     public function toMap() {
@@ -192,6 +215,75 @@ class OcrInfo extends Model {
         }
         if (null !== $this->chipNum) {
             $res['chip_num'] = $this->chipNum;
+        }
+        if (null !== $this->passportType) {
+            $res['passport_type'] = $this->passportType;
+        }
+        if (null !== $this->surname) {
+            $res['surname'] = $this->surname;
+        }
+        if (null !== $this->givenName) {
+            $res['given_name'] = $this->givenName;
+        }
+        if (null !== $this->passportNumber) {
+            $res['passport_number'] = $this->passportNumber;
+        }
+        if (null !== $this->nameEn) {
+            $res['name_en'] = $this->nameEn;
+        }
+        if (null !== $this->birthPlaceEn) {
+            $res['birth_place_en'] = $this->birthPlaceEn;
+        }
+        if (null !== $this->birthPlace) {
+            $res['birth_place'] = $this->birthPlace;
+        }
+        if (null !== $this->country) {
+            $res['country'] = $this->country;
+        }
+        if (null !== $this->birthDate) {
+            $res['birth_date'] = $this->birthDate;
+        }
+        if (null !== $this->birthDateYmd) {
+            $res['birth_date_ymd'] = $this->birthDateYmd;
+        }
+        if (null !== $this->issueDateYmd) {
+            $res['issue_date_ymd'] = $this->issueDateYmd;
+        }
+        if (null !== $this->issuePlaceEn) {
+            $res['issue_place_en'] = $this->issuePlaceEn;
+        }
+        if (null !== $this->issuePlace) {
+            $res['issue_place'] = $this->issuePlace;
+        }
+        if (null !== $this->issueAuthorityEn) {
+            $res['issue_authority_en'] = $this->issueAuthorityEn;
+        }
+        if (null !== $this->issueAuthority) {
+            $res['issue_authority'] = $this->issueAuthority;
+        }
+        if (null !== $this->idNumber) {
+            $res['id_number'] = $this->idNumber;
+        }
+        if (null !== $this->mrzLine1) {
+            $res['mrz_line1'] = $this->mrzLine1;
+        }
+        if (null !== $this->mrzLine2) {
+            $res['mrz_line2'] = $this->mrzLine2;
+        }
+        if (null !== $this->permitType) {
+            $res['permit_type'] = $this->permitType;
+        }
+        if (null !== $this->nameCn) {
+            $res['name_cn'] = $this->nameCn;
+        }
+        if (null !== $this->validPeriod) {
+            $res['valid_period'] = $this->validPeriod;
+        }
+        if (null !== $this->permitNumber) {
+            $res['permit_number'] = $this->permitNumber;
+        }
+        if (null !== $this->mrzCode) {
+            $res['mrz_code'] = $this->mrzCode;
         }
         return $res;
     }
@@ -335,6 +427,75 @@ class OcrInfo extends Model {
         }
         if(isset($map['chip_num'])){
             $model->chipNum = $map['chip_num'];
+        }
+        if(isset($map['passport_type'])){
+            $model->passportType = $map['passport_type'];
+        }
+        if(isset($map['surname'])){
+            $model->surname = $map['surname'];
+        }
+        if(isset($map['given_name'])){
+            $model->givenName = $map['given_name'];
+        }
+        if(isset($map['passport_number'])){
+            $model->passportNumber = $map['passport_number'];
+        }
+        if(isset($map['name_en'])){
+            $model->nameEn = $map['name_en'];
+        }
+        if(isset($map['birth_place_en'])){
+            $model->birthPlaceEn = $map['birth_place_en'];
+        }
+        if(isset($map['birth_place'])){
+            $model->birthPlace = $map['birth_place'];
+        }
+        if(isset($map['country'])){
+            $model->country = $map['country'];
+        }
+        if(isset($map['birth_date'])){
+            $model->birthDate = $map['birth_date'];
+        }
+        if(isset($map['birth_date_ymd'])){
+            $model->birthDateYmd = $map['birth_date_ymd'];
+        }
+        if(isset($map['issue_date_ymd'])){
+            $model->issueDateYmd = $map['issue_date_ymd'];
+        }
+        if(isset($map['issue_place_en'])){
+            $model->issuePlaceEn = $map['issue_place_en'];
+        }
+        if(isset($map['issue_place'])){
+            $model->issuePlace = $map['issue_place'];
+        }
+        if(isset($map['issue_authority_en'])){
+            $model->issueAuthorityEn = $map['issue_authority_en'];
+        }
+        if(isset($map['issue_authority'])){
+            $model->issueAuthority = $map['issue_authority'];
+        }
+        if(isset($map['id_number'])){
+            $model->idNumber = $map['id_number'];
+        }
+        if(isset($map['mrz_line1'])){
+            $model->mrzLine1 = $map['mrz_line1'];
+        }
+        if(isset($map['mrz_line2'])){
+            $model->mrzLine2 = $map['mrz_line2'];
+        }
+        if(isset($map['permit_type'])){
+            $model->permitType = $map['permit_type'];
+        }
+        if(isset($map['name_cn'])){
+            $model->nameCn = $map['name_cn'];
+        }
+        if(isset($map['valid_period'])){
+            $model->validPeriod = $map['valid_period'];
+        }
+        if(isset($map['permit_number'])){
+            $model->permitNumber = $map['permit_number'];
+        }
+        if(isset($map['mrz_code'])){
+            $model->mrzCode = $map['mrz_code'];
         }
         return $model;
     }
@@ -657,5 +818,166 @@ class OcrInfo extends Model {
      * @var string
      */
     public $chipNum;
+
+    // 证件类别
+    /**
+     * @example P
+     * @var string
+     */
+    public $passportType;
+
+    // 姓
+    /**
+     * @example 张
+     * @var string
+     */
+    public $surname;
+
+    // 名
+    /**
+     * @example 三
+     * @var string
+     */
+    public $givenName;
+
+    // 护照号码
+    /**
+     * @example L12880801
+     * @var string
+     */
+    public $passportNumber;
+
+    // 英文姓名
+    /**
+     * @example ZHENGJIAN
+     * @var string
+     */
+    public $nameEn;
+
+    // 英文出生地
+    /**
+     * @example GUANGDONG
+     * @var string
+     */
+    public $birthPlaceEn;
+
+    // 非英文出生地
+    /**
+     * @example 广东
+     * @var string
+     */
+    public $birthPlace;
+
+    // 国籍
+    /**
+     * @example CHINESE
+     * @var string
+     */
+    public $country;
+
+    // 出生日期
+    /**
+     * @example 850320
+     * @var string
+     */
+    public $birthDate;
+
+    // 出生日期（年月日）
+    /**
+     * @example 1985年03月20日
+     * @var string
+     */
+    public $birthDateYmd;
+
+    // 签发日期
+    /**
+     * @example 2019年01月18日
+     * @var string
+     */
+    public $issueDateYmd;
+
+    // 签发地
+    /**
+     * @example GUANGDONG
+     * @var string
+     */
+    public $issuePlaceEn;
+
+    // 非英文签发地
+    /**
+     * @example 广东
+     * @var string
+     */
+    public $issuePlace;
+
+    // 签发机关
+    /**
+     * @example National Immigration Administration, PRC
+     * @var string
+     */
+    public $issueAuthorityEn;
+
+    // 中华人民共和国国家移民管理局
+    /**
+     * @example 非英文签发机关
+     * @var string
+     */
+    public $issueAuthority;
+
+    // 身份号
+    /**
+     * @example 123
+     * @var string
+     */
+    public $idNumber;
+
+    // 机读码一
+    /**
+     * @example POCHNZHENGJIAN
+     * @var string
+     */
+    public $mrzLine1;
+
+    // 机读码二
+    /**
+     * @example EF12608921CHN8503208F2901178NGKELMPONBPJB978
+     * @var string
+     */
+    public $mrzLine2;
+
+    // 证件类别
+    /**
+     * @example 往来台湾通行证
+     * @var string
+     */
+    public $permitType;
+
+    // 中文姓名
+    /**
+     * @example 证件样本
+     * @var string
+     */
+    public $nameCn;
+
+    // 有效期限 (yyyy.MM.dd-yyyy.MM.dd)
+    /**
+     * @example 2019.01.18-2029.01.17
+     * @var string
+     */
+    public $validPeriod;
+
+    // 证件号码
+    /**
+     * @example H01162111
+     * @var string
+     */
+    public $permitNumber;
+
+    // 机读码
+    /**
+     * @example CSCA3273201<901178<8108038<2
+     * @var string
+     */
+    public $mrzCode;
 
 }
